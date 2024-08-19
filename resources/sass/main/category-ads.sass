@@ -1,0 +1,397 @@
+.smz-box
+    padding: 20px
+    background: #fff
+    box-shadow: 0 0 5px 2px rgb(0 115 216 / 15%)
+    border-radius: 10px
+
+    .smz-box-title
+        color: #000
+        font-size: 20px
+        margin-bottom: 0
+        font-weight: bold
+
+        .reset-btn
+            color: #0e2859
+            text-decoration: none
+            font-size: 16px
+            font-weight: 500
+            background: #e1f1ff
+            padding: 5px 15px
+            border-radius: 6px
+            // float: right
+            &:hover
+                background: #0e2859
+                color: #fff !important
+
+    .smz-box-body
+        .input-name
+            font-size: 15px
+            padding-bottom: 5px
+            position: relative
+            color: #2b2b2b
+            font-weight: 400    
+    
+.left-side-filters
+    display: block
+
+    .min-max-area
+        display: flex
+        input 
+            width: 50%
+            margin: 0 5px
+            // &:nth-child(1)
+            //     margin-right: 10px
+                
+    .search-button
+        display: inline-block
+        font-weight: 400
+        text-align: center
+        vertical-align: middle
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+        padding: .375rem .75rem
+        font-size: 1rem
+        line-height: 1.5
+        border-radius: .25rem
+        border: none!important
+        background-color: #0e2859!important
+        color: #fff!important
+        width: 100%
+        height: 45px
+        text-transform: uppercase
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%)
+        outline: 0
+        &:hover
+            box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%)
+            background-color: #015eaf!important
+
+    
+.category-ads
+    padding: 5px ​20px
+    padding-bottom: 100px
+    overflow-x: hidden
+    
+    .whatsapp-icon-btn
+        width: 18px
+        height: 18px
+
+    .spec-name
+        color: #0e2859
+
+    .smz-input
+        height: 40px
+        background: #fff
+        border: 1px solid rgba(0,0,0,.2)
+        border-radius: 5px
+        padding: 12px 10px
+        font-size: 13px
+        font-weight: 500
+        letter-spacing: 1px
+        color: #1a1a1a
+        margin-bottom: unset
+
+    .sort-area
+        display: flex
+        justify-content: center
+        align-items: center
+        background: #ddeefc
+        border-radius: 6px
+        padding: 15px
+        height: 50px
+        // float: right
+        position: relative
+        color: #0073d8
+        font-size: 15px
+        margin-top: -10px
+        font-weight: 600
+        min-width: 207px
+        i
+            margin-left: 10px
+
+
+
+
+.ads-section
+    background-color: #fff
+    position: relative
+    margin-top: 20px
+    min-height: 60%
+    .single-ad.no-listing-message
+        flex-direction: row !important
+        min-height: 200px !important
+        font-size: 25px
+        display: flex
+        justify-content: center
+        align-items: center
+        color: #0e2859
+
+        i
+            margin-right: 8px
+            margin-left: 8px
+    a
+        text-decoration: none
+
+    .single-ad
+        width: 100%
+        display: flex
+        // justify-content: center
+        margin-bottom: 12px
+        background-color: #fff
+        padding: 10px 15px 0
+        border-radius: 10px
+        box-shadow: 0 0 5px 2px hsl(0deg 0% 53% / 15%)
+
+        .ad-image-box
+            height: 160px
+            width: 30%
+            position: relative
+            // margin-right: 20px
+            margin-top: 15px
+
+            .ad-image
+                width: 100%
+                height: 160px
+                // height: 250px
+                object-fit: cover
+                border-radius: 10px
+
+            .image-count.left
+                left: 10px
+            .image-count.right
+                right: 10px
+
+            .image-count
+                position: absolute
+                bottom: 10px
+                background-color: #000000cf
+                color: white
+                width: 40px
+                text-align: center
+                font-size: 14px
+                border-radius: 5px
+                font-weight: 200
+                
+            ._mobile_fav_icon
+                font-size: 24px
+                float: right
+                position: absolute
+                right: 15px
+                margin-top: 10px
+                color: rgba(5,17,20,.4)
+                text-shadow: 0 0 10px rgb(5 17 20 / 0%)
+                -webkit-text-stroke: 1px
+                -webkit-text-stroke-color: #fff
+                -webkit-text-fill-color: rgba(5,17,20,.4)
+                z-index: 8
+                top: 1px
+                outline: none
+        
+        .ad-meta-details
+            width: 70%
+        
+            .price-area
+                width: 100%
+                margin-top: 10px
+                .price
+                    font-size: 13px
+                    color: #0e2859
+
+                .time-ago
+                    // float: right
+                    font-size: 13px
+                    color: #0e2859
+                    font-weight: 500
+                    margin: 0
+            
+            .category-list
+                .category-item
+                    display: inline-block
+                    text-decoration: none
+                    color: #797979
+                    font-size: 14px
+                    font-weight: 400
+            
+            .ad-title
+                display: inline-block
+                margin: 5px 0
+                width: 100%
+
+                h2
+                    font-size: 13px
+                    font-weight: 500
+                    color: #5d5d5d
+                    line-height: 2
+                    text-overflow: ellipsis
+                    overflow: hidden
+                    white-space: nowrap
+                    margin-bottom: 5px
+
+            .ad-specs
+                display: flex
+                justify-content: flex-start
+                align-items: center
+                .spec-item
+                    width: auto
+                    // margin-right: 20px
+                    // width: 100%
+
+                    img
+                        width: 16px
+                        height: auto
+
+            .ad-location
+                font-size: 14px
+                color: #1a1a1a
+                margin-top: 8px
+                i
+                    font-size: 14px
+                    color: #0e2859
+
+            .ad-footer
+                margin-top: 10px
+                padding: 15px 0 20px
+                border-top: 1px solid #e4e4e4
+
+                .left-area
+                    .number
+                        font-weight: 500
+
+                    .filled
+                        color: #0e2859 !important
+                        -webkit-text-stroke-color: #0e2859
+                        
+                    .footer-icon
+                        font-size: 20px
+                        color: #fff
+                        -webkit-text-stroke-color: #5d5d5d
+                        -webkit-text-stroke-width: 1.5px
+                        margin-right: 5px
+
+                .right-area
+                    // float: right
+                    margin-top: -5px
+                    text-transform: uppercase          
+
+
+.ads-column
+    padding-left: 0 !important
+
+.filter-btns-area-sm
+    display: none
+
+    
+@media screen and ( max-width:768px  )
+    .ads-column
+        padding: 0 !important
+
+    .search-footer-fixed
+        text-align: center
+        box-shadow: 0 0 13px #cee8fc
+        padding: 12px 15px
+        background-color: #fff
+        display: block
+        width: 100%
+        height: 65px
+        position: fixed
+        bottom: 0
+        z-index: 1
+
+    .filters-header
+        text-align: center
+        box-shadow: 0 3px 5px 0 rgb(0 0 0 / 12%)
+        padding: 12px 15px
+        background-color: #fff
+        display: block
+        width: 100%
+        height: 50px
+        z-index: 1
+
+        i
+            font-size: 20px
+            color: #858585
+            margin-top: 4px
+
+    .filter-fixed-sm
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        z-index: 120
+        height: 100%
+        background-color: white
+        overflow: auto
+        padding-bottom: 60px
+        .filter-fixed-sm-body
+            overflow: auto
+            padding: 20px
+
+        .reset-btn
+            float: right
+
+
+    .filter-btns-area-sm
+        display: flex
+        justify-content: center
+        padding-bottom: 10px
+        border-bottom: 1px solid #eef0f1
+        svg
+            width: 17px
+
+        .filters-icon
+            text-align: center
+            width: 50%
+            position: relative
+            &::after
+                content: ""
+                position: absolute
+                right: 0
+                top: 50%
+                -ms-transform: translateY(-50%)
+                transform: translateY(-50%)
+                width: 1px
+                height: 24px
+                background-color: #eef0f1
+            
+        .sort-icon
+            text-align: center
+            width: 50%
+
+    .top-bar
+        display: none
+
+    .ads-section
+        min-height: auto
+        background-color: #dcdcdc
+        .single-ad.no-listing-message
+            font-size: 20px
+            
+        .single-ad
+            flex-direction: column
+            box-shadow: none
+            border-radius: 0
+            .ad-image-box
+                width: 100%
+                height: 220px
+
+                .ad-image
+                    height: 220px
+
+            .ad-meta-details 
+                width: 100%
+                .price-area 
+                    .price
+                        font-size: 16px
+                        font-weight: 600
+                    .time-ago
+                        font-size: 12px
+                        color: #5d5d5d
+                
+                .ad-location
+                    font-size: 11px
+            .ad-footer
+                padding: 15px 20px
+
+@media screen and ( max-width:768px  )
+    .left-side-filters-col
+        display: none !important

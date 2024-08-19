@@ -1,0 +1,362 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);.steps {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  padding-top: 25px;
+}
+
+.steps .active .icon {
+  background: linear-gradient(45deg, #0068ff, #30b0e0) !important;
+}
+
+.steps .active .bar {
+  background: linear-gradient(45deg, #0068ff, #30b0e0) !important;
+}
+
+.steps .active .name {
+  background: -webkit-linear-gradient(45deg, #000000, #333333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.steps .step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.steps .step .bar {
+  height: 2px;
+  background: #6d6d6d;
+  position: absolute;
+  top: 19px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.steps .step .icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #6d6d6d;
+  border-radius: 50%;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.steps .step .name {
+  font-size: 13px;
+}
+
+.steps .step1 {
+  align-items: flex-start;
+  width: 30%;
+}
+
+.steps .step2 {
+  align-items: center;
+  width: 60%;
+}
+
+.steps .step3 {
+  align-items: flex-end;
+  width: 30%;
+}
+
+@media screen and (max-width: 768px) {
+  .steps {
+    width: 90%;
+  }
+}
+
+.files-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.files-container .file-item {
+  position: relative;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  flex-direction: column;
+}
+
+.files-container .file-item .file-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: 80px;
+}
+
+.files-container .file-item .file-icon {
+  font-size: 80px;
+  border: 1px solid #ececec;
+  padding: 10px;
+}
+
+.files-container .file-item .delete {
+  position: absolute;
+  color: #d52027a3;
+  cursor: pointer;
+  top: -5px;
+  right: 0;
+}
+
+.file-dropzone-small {
+  width: 160px;
+  height: 125px;
+  background: #eeeeee;
+  border: 1px dashed #333333;
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-left: 10px;
+  padding: 30px;
+}
+
+.file-dropzone-small:hover {
+  background-color: #fafafa;
+}
+
+.images-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.images-container .image-box {
+  width: 215px;
+  height: 150px;
+  position: relative;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.images-container .image-box .image-overlay {
+  position: absolute;
+  background: #0000006b;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  right: 0;
+  top: 0;
+  border-radius: 5px;
+}
+
+.images-container .image-box .image-overlay .image-center-button {
+  padding: 6px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  border-radius: 3px;
+}
+
+.images-container .image-box .image-overlay .uploading {
+  background-color: #000000cc;
+  color: #ffffff;
+}
+
+.images-container .image-box .image-overlay .delete {
+  background-color: #d52027cc;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.images-container .image-box .image-overlay .deleting {
+  background-color: #d52027cc;
+  color: #ffffff;
+}
+
+.images-container .image-box .image-overlay .failed {
+  background-color: #ffed4acc;
+  color: #000000;
+  cursor: pointer;
+}
+
+.images-container .image-box .image-overlay .delete-center {
+  position: absolute;
+  cursor: pointer;
+  background: #d52027a3;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  right: 40%;
+  top: 40%;
+  border-radius: 3px;
+}
+
+.images-container .image-box img {
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.loading-text {
+  font-size: 30px;
+  z-index: 1;
+}
+
+.dropzone-small {
+  width: 220px;
+  height: 150px;
+  background: #eeeeee;
+  border: 1px dashed #333333;
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-left: 10px;
+  padding: 30px;
+}
+
+.dropzone-small:hover {
+  background-color: #fafafa;
+}
+
+.center-dropzone {
+  width: 450px !important;
+  height: 250px !important;
+}
+
+.file-center-dropzone {
+  width: 100%;
+  height: 200px !important;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+}
+
+.is-dragging {
+  background-color: #d4d4d4;
+}
+
+@media screen and (max-width: 768px) {
+  .images-container {
+    justify-content: center;
+  }
+}
+
+.btn:focus,
+.btn.focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.admin .table-wrapper {
+  overflow: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .admin .table-wrapper i {
+    margin: 0 4px;
+  }
+
+  .admin-filters .single-filte-item.to-be-centered {
+    text-align: center;
+  }
+
+  .admin-filters .single-filte-item {
+    margin-top: 15px;
+  }
+
+  .admin-filters .mt-lg-only {
+    margin-top: inherit;
+  }
+}
+
+.admin-filters .mt-lg-only {
+  margin-top: 10px;
+}
+
+.admin .table {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
+.admin table td {
+  vertical-align: middle;
+}
+
+.admin .table > :not(caption) > * > * {
+  padding: 5px !important;
+}
+
+td .trash-icon {
+  margin-left: -20px;
+}
+
+td a {
+  position: relative;
+}
+
+td .category-image {
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 50px;
+  border-radius: 200%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.admin .upload-category-image {
+  width: 100%;
+  height: 102px;
+  cursor: pointer;
+  border-radius: 3px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .admin .upload-category-image {
+    width: 100%;
+    height: 170px;
+    cursor: pointer;
+    border-radius: 3px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+

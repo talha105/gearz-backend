@@ -1,0 +1,449 @@
+.home
+    // position: relative
+    padding-bottom: 100px
+    .slider-container-smz
+        padding: 20px 20px 0
+
+    .top--ads
+        padding: 0 50px
+    .carousel-inner
+        .slide-item
+            height: 250px
+            width: 100%
+            object-fit: cover
+            border-radius: 10px
+
+    .section-heading
+        margin-top: 35px
+        font-size: 16px
+        font-weight: 600
+        padding-bottom: 20px
+        display: -ms-flexbox
+        display: flex
+        -ms-flex-pack: justify
+        justify-content: space-between
+        -ms-flex-align: center
+        align-items: center
+
+    .bold-text
+        color: #1a1a1a
+        font-size: 12px
+        font-weight: 600
+    .categories
+        padding: 35px 50px 0
+        margin-top: 50px
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-wrap: wrap
+        .category-item-box
+            width: 50%
+            padding: 6px
+
+            .category-item
+                border: 1px solid #f4f4f4
+                box-shadow: 0 0 3px 1px hsl(0deg 0% 53% / 15%)
+                height: 95px
+                display: flex
+                justify-content: center
+                cursor: pointer
+                align-items: center
+                flex-direction: column
+                border-radius: 7px
+
+                .category-item-image
+                    width: 40px
+                    height: 45px
+                .category-item-name
+                    color: #000
+                    margin-top: 5px
+                    font-size: 12px
+                    font-weight: 600
+
+    .product-section
+        .item-card
+            cursor: pointer
+            width: 100%
+            background-color: #fff
+            // margin: 2%
+            height: auto
+            border-radius: 10px
+            text-decoration: none
+            color: #212529
+            transition: all .3s linear
+            box-shadow: 0 1px 8px hsl(0deg 0% 68% / 37%)
+            &:hover
+                box-shadow: 0 2px 30px #dcf0ff  
+            
+            .item-card-image
+                width: 100%
+                height: auto
+                max-height: 200px
+                object-fit: cover
+                border-radius: 10px 10px 0 0
+
+            .item-card-details
+                padding: 3px
+                // text-align: left
+
+                .item-specs
+                    display: flex
+                    justify-content: center
+                    align-items: center
+
+                    svg
+                        width: 16px
+                        height: 16px
+                        margin-bottom: 3px
+
+                    .spec-item
+                        width: 50%
+                        text-align: center
+                    .spec-item-ml
+                        margin-left: 10px
+                    
+                .price-right
+                    padding-left: 3px
+                    &::after
+                        font-family: FontAwesome
+                        position: relative
+                        right: 0
+                        top: 0
+                        content: "\27F6"
+                        font-size: 16px
+                        float: right
+                        color: #cecece
+                    
+                .price-left
+                    padding-right: 3px
+                    &::after
+                        font-family: FontAwesome
+                        position: relative
+                        left: 0
+                        top: 0
+                        content: "\27F5"
+                        font-size: 16px
+                        float: left
+                        color: #cecece
+                .item-card-title
+                    margin-top: 10px
+                    color: #2b2d2e
+                    font-size: 12px
+                    font-weight: 600
+                    display: -ms-flexbox
+                    display: flex
+                    -ms-flex-align: center
+                    align-items: center
+                    padding: 0
+                    width: 100%
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    display: -webkit-box
+                    -webkit-box-orient: vertical
+                    -webkit-line-clamp: 2
+                    line-height: 20px
+                    min-height: 40px
+                    max-height: 40px
+                    padding: 0 5px
+
+                .item-spec-name
+                    margin-left: 10px
+                    font-size: 11px
+                    color: #636363
+                    font-weight: 400
+
+.carousel-indicators
+    bottom: -50px
+
+    li.active
+        background-color: #2196f3
+
+    li
+        background-color: #ededef
+        height: 5px
+
+.sub-category-modal
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    // align-items: center
+    background-color: #00000078
+    overflow: auto
+    // margin-top: 375px
+    z-index: 200
+
+    .sub-category-modal-main
+        // max-height: 90vh
+        height: fit-content
+
+        border-radius: 10px
+        max-width: 90%
+        width: 500px
+        position: relative
+        background-color: #fff
+        margin: 60px 0 
+        
+        ._modal-close-btn.left
+            left: -20px
+        ._modal-close-btn.right
+            right: -20px
+        ._modal-close-btn
+            position: absolute
+            top: -15px
+            background: #ec4a4a
+            width: 40px
+            height: 40px
+            border-radius: 50%
+            display: -ms-flexbox
+            display: flex
+            -ms-flex-align: center
+            align-items: center
+            -ms-flex-pack: center
+            justify-content: center
+            cursor: pointer
+            color: white
+            font-size: 20px
+        
+        .smz-modal-title
+            padding: 15px 15px 10px
+            border-bottom: 1px solid #f3f3f3
+            box-shadow: 0 2px 2px #f3f3f3
+            margin-bottom: 15px
+            font-size: 20px
+            color: #141414
+            font-weight: 600
+
+        .sub-category-listing
+            background-color: #fff
+            font-size: 16px
+            display: block
+            opacity: 1
+            width: 100%
+            padding: 0 30px 30px
+            border-radius: 10px
+
+            .sub-category-item
+                display: block
+                cursor: pointer
+                font-size: 13px
+                padding: 14px
+                // text-align: left
+                color: #101010
+                border-bottom: 1px solid #f3f1f1
+
+                &:hover
+                    text-decoration: underline
+
+                i
+                    // float: right
+                    font-size: 21px
+                    color: #c8c8c8
+
+    
+.bottom-navbar
+    width: 100%
+    position: fixed
+    bottom: 0
+    height: 55px
+    box-shadow: 0 0 5px #000000
+    display: flex
+    justify-content: center
+    z-index: 100
+    align-items: center
+    background-color: $bg_blue
+    // background-color: #fff
+    
+
+    .add-new
+        width: 35px
+        height: 35px
+        border-radius: 50%
+        box-shadow: 0 2px 10px rgb(74 160 236 / 26%)
+    // .single-item.active
+    //     color: #0e2859
+    //     font-weight: 700
+    //     svg
+    //         path
+    //             fill: #0e2859
+
+    .single-item
+        cursor: pointer
+        width: 100%
+        color: #fff
+        text-align: center
+        .menu-item
+            color: #fff !important
+            text-decoration: none
+
+            .ellipse
+                font-size: 30px
+                font-weight: 100
+
+        .search-icon
+            margin-top: 2px
+            font-size: 20px
+            // padding: 8px
+            // border-radius: 200%
+            // color: white
+            font-weight: 100
+        svg
+            path
+                fill: #fff
+
+
+.smz-round-btn
+    float: right
+    text-decoration: none
+    font-size: 12px
+    padding: 8px 12px
+    background-color: #f6f6f6
+    transition: all .3s linear
+    display: -ms-inline-flexbox
+    display: inline-flex
+    background: #fff
+    color: #0e2859
+    font-weight: 500
+    border-radius: 25px
+    -ms-flex-pack: center
+    justify-content: center
+    -ms-flex-align: center
+    align-items: center
+    box-shadow: 0 1px 10px rgb(0 115 216 / 17%)
+    &:hover
+        text-decoration: none
+        background-color: #0e2859
+        color: #fff !important
+
+    
+.smz-btn-lite
+    width: -webkit-fit-content
+    width: -moz-fit-content
+    width: fit-content
+    background-color: #e1f1ff
+    color: #0e2859
+    border-radius: 5px
+    // text-transform: uppercase
+    font-size: 14px
+    font-weight: 500
+    letter-spacing: 1px
+    margin-left: 10px
+    border: 1px solid #e1f1ff
+    cursor: pointer
+    &:hover
+        text-decoration: none
+        background-color: #0e2859
+        color: #fff !important
+
+
+.smz-btn-dark
+    width: -webkit-fit-content
+    width: -moz-fit-content
+    width: fit-content
+    background-color: #0e2859
+    color: #fff !important
+    border-radius: 5px
+    // text-transform: uppercase
+    font-size: 14px
+    font-weight: 500
+    letter-spacing: 1px
+    margin-left: 10px
+    text-decoration: none
+    &:hover
+        background-color: #015eaf
+        color: #fff
+
+.smz-btn-red-light
+    background: #fde6e6
+    color: #e91d1d
+    width: 205px
+    height: 50px
+    font-size: 16px
+    font-weight: 500
+    border-radius: 6px
+    border: 1px solid #e91d1d
+    box-sizing: border-box
+    &:hover
+        background-color: #e91d1d
+        color: #fff
+
+    
+@media screen and ( max-width:768px  )
+
+    .product-section 
+        .item-card 
+            .item-card-image
+                height: 110px !important
+    .home
+        .section-heading
+            margin-top: 25px
+
+            
+        .top--ads
+            padding: 0 10px !important
+        .categories
+            padding: 5px 10px 0
+            
+        .slider-container-smz
+            padding: 15px 10px 0
+            // margin-top: -15px
+
+        .product-section 
+            .item-card 
+                .item-card-details 
+                    
+                    .item-spec-name
+                        margin-left: 1px
+
+    .sub-category-modal
+        overflow: hidden
+        .sub-category-modal-main
+            width: 100%
+            max-width: 100%
+            height: 100%
+            border-radius: 0 
+            overflow: auto
+            margin: 0 !important
+            max-height: 100% !important
+
+            ._modal-close-btn.left
+                left: 8px
+            ._modal-close-btn.right
+                right: 8px
+
+            ._modal-close-btn
+                top: 10px
+                background: #fff
+                svg 
+                    path
+                        fill: #858585 !important
+
+            .sub-category-listing
+                padding: 9px 12px 24px
+
+                .sub-category-item
+                    font-size: 16px
+                    color: #000
+                    font-weight: 500
+                    border-bottom: 1px solid #ececec
+                    margin-bottom: 10px
+
+
+@media screen and ( max-width:400px  )
+    .home 
+        .product-section 
+            .item-card 
+                .item-card-details 
+                    .item-specs 
+                        .spec-item
+                            &:nth-child(1)
+                                width: 35%
+
+                            &:nth-child(2)
+                                width: 55%
+                                
