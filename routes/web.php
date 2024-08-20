@@ -74,5 +74,5 @@ Route::get('/email', function(){
 // } );
 Route::get('admin/{path?}' , 'AdminController@dashboard' )->where('path', '^(?!.*api).*$[\/\w\.-]*')->middleware('auth');
 // Route::get('/{path?}' , 'MainController@home' )->where('path', '^(?!.*api).*$[\/\w\.-]*');
-Route::get('/admin/login' , 'MainController@home');
+Route::get('/', 'HomeController@adminLogin');
 
