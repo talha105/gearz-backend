@@ -73,6 +73,6 @@ Route::get('/email', function(){
 //     return view('layouts.admin-md');
 // } );
 Route::get('admin/{path?}' , 'AdminController@dashboard' )->where('path', '^(?!.*api).*$[\/\w\.-]*')->middleware('auth');
-Route::get('/app/{path?}' , 'MainController@home' )->where('path', '^(?!.*api).*$[\/\w\.-]*');
+// Route::get('/{path?}' , 'MainController@home' )->where('path', '^(?!.*api).*$[\/\w\.-]*');
 Route::get('/', 'HomeController@adminLogin');
 
