@@ -23,7 +23,7 @@
               Filter</a
             >
 
-            <h5 class="card-title">Manage Sellers</h5>
+            <h5 class="card-title">Manage Sellers1</h5>
           </div>
           <!-- /.card-header -->
           <div
