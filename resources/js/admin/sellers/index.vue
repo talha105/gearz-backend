@@ -767,6 +767,7 @@ export default {
       axios
         .post(`/api/get-sellers?page=${page}`, this.search)
         .then((res) => {
+            console.log("data",res?.data?.sellers)
           this.loading = false;
           this.sellers = res.data.sellers;
         })
