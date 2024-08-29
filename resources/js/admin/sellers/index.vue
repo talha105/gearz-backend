@@ -120,9 +120,9 @@
               <tbody v-if="sellers.data">
                 <tr v-for="(user, index) in sellers.data" :key="index">
                   <td>{{ index + 1 }}</td>
-                  <td>{{ user.seller.garage_name ?? "" }}</td>
+                  <td>{{ user.seller.garage_name }}</td>
                   <td>{{ user.email }}</td>
-                  <td>{{ user.seller.city ?? "" }}</td>
+                  <td>{{ user.seller.city }}</td>
                   <td>
                     <img
                       :src="'/storage/sellers/' + user.seller.logo"
@@ -768,7 +768,22 @@ export default {
         .post(`/api/get-sellers?page=${page}`, this.search)
         .then((res) => {
           this.loading = false;
-          this.sellers = res.data.sellers;
+          this.sellers = {
+            ...res.data.sellers,
+            data:res.data.sellers.data.map(it=>{
+              if(!it?.seller?.garage_name || !it?.seller?.city){
+                return {
+                  ...it,
+                  seller:{
+                    ...it?.seller,
+                    garage_name:it?.seller?.garage_name?it?.seller?.garage_name:"",
+                    city:it?.seller?.city?it?.seller?.city:"",
+                  }
+                }
+              }
+              return it
+            })
+          };
         })
         .catch((err) => {
           this.loading = false;
