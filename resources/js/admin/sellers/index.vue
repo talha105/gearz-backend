@@ -23,7 +23,7 @@
               Filter</a
             >
 
-            <h5 class="card-title">Manage Sellers1</h5>
+            <h5 class="card-title">Manage Sellers</h5>
           </div>
           <!-- /.card-header -->
           <div
@@ -102,7 +102,7 @@
             </div>
           </div>
           <div class="card-body position-relative text-center">
-            <loader v-if="loading"></loader>
+            <!-- <loader v-if="loading"></loader> -->
             <table class="table table-hover">
               <thead>
                 <tr>
