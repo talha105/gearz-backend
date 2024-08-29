@@ -120,7 +120,7 @@
               <tbody v-if="sellers.data">
                 <tr v-for="(user, index) in sellers.data" :key="index">
                   <td>{{ index + 1 }}</td>
-                  <td>{{ user.seller.garage_name }}</td>
+                  <td>{{ "user.seller.garage_name" }}</td>
                   <td>{{ user.email }}</td>
                   <td>{{ user.seller.city }}</td>
                   <td>
