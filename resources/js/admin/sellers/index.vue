@@ -747,7 +747,7 @@ export default {
     initiateSearching() {
       this.isSearching = true;
       this.sellers = {};
-      this.getAllSellers(1);
+      this.getAllSellers(2);
     },
     searchSellers(page = 1) {
       this.page = page;
@@ -762,13 +762,13 @@ export default {
           this.loading = false;
         });
     },
-    getAllSellers(page = 1) {
+    getAllSellers(page = 2) {
       this.loading = true;
       axios
         .post(`/api/get-sellers?page=${page}`, this.search)
         .then((res) => {
           this.loading = false;
-          this.sellers = {...res.data.sellers,data:res.data.sellers?.data?.filter(it=>it.status=="approved")};
+          this.sellers = res.data.sellers;
         })
         .catch((err) => {
           this.loading = false;
