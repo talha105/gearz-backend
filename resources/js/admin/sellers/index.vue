@@ -102,6 +102,7 @@
             </div>
           </div>
           <div class="card-body position-relative text-center">
+              {{ console.log("data",sellers.data) }}
              <loader v-if="loading"></loader>
             <table class="table table-hover">
               <thead>
