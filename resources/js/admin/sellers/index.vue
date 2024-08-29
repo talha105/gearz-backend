@@ -102,7 +102,7 @@
             </div>
           </div>
           <div class="card-body position-relative text-center">
-            <!-- <loader v-if="loading"></loader> -->
+             <loader v-if="loading"></loader>
             <table class="table table-hover">
               <thead>
                 <tr>
