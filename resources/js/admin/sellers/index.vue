@@ -102,7 +102,7 @@
             </div>
           </div>
           <div class="card-body position-relative text-center">
-             <loader v-if="loading" :load="myLoading(loading)"></loader>
+            <loader v-if="loading"></loader>
             <table class="table table-hover">
               <thead>
                 <tr>
@@ -120,7 +120,7 @@
               <tbody v-if="sellers.data">
                 <tr v-for="(user, index) in sellers.data" :key="index">
                   <td>{{ index + 1 }}</td>
-                  <td>{{ user.seller?.garage_name }}</td>
+                  <td>{{ user.seller.garage_name }}</td>
                   <td>{{ user.email }}</td>
                   <td>{{ user.seller.city }}</td>
                   <td>
@@ -165,17 +165,17 @@
                         aria-expanded="false"
                         :disabled="
                           !user.seller.docs ||
-                          (user.seller.docs && user.seller.docs?.length == 0)
+                          (user.seller.docs && user.seller.docs.length == 0)
                         "
                       >
                         Documents ({{
-                          user.seller.docs ? user.seller.docs?.length : 0
+                          user.seller.docs ? user.seller.docs.length : 0
                         }})
                       </button>
                       <ul
                         class="dropdown-menu"
                         aria-labelledby="dropdownMenuButton"
-                        v-if="user.seller.docs && user.seller.docs?.length > 0"
+                        v-if="user.seller.docs && user.seller.docs.length > 0"
                       >
                         <li>
                           <a
@@ -340,7 +340,7 @@
                     id="title"
                     placeholder="Garage Name"
                     class="form-control"
-                    v-model="seller?.garage_name"
+                    v-model="seller.garage_name"
                     name="name"
                     required
                   />
@@ -360,7 +360,7 @@
                     id="title"
                     placeholder="Arabic Garage Name"
                     class="form-control"
-                    v-model="seller?.ar_garage_name"
+                    v-model="seller.ar_garage_name"
                     name="name"
                     required
                   />
@@ -550,7 +550,7 @@
                       :aria-controls="`modal-tab-${index}`"
                       aria-selected="true"
                       @click="tab.active = true"
-                      >{{ tab.text }} ({{ seller[tab.items]?.length }})
+                      >{{ tab.text }} ({{ seller[tab.items].length }})
                     </a>
                   </div>
                   <!-- Tabs navs -->
@@ -708,7 +708,7 @@ export default {
   computed: {
     subCategories() {
       let subCategories = [];
-      if (this.categories && this.categories?.length) {
+      if (this.categories && this.categories.length) {
         this.categories.map((cat) => {
           return (
             this.seller.categories.includes(cat.id) &&
@@ -720,7 +720,7 @@ export default {
     },
     subSubCategories() {
       let subSubCategories = [];
-      if (this.subCategories && this.subCategories?.length) {
+      if (this.subCategories && this.subCategories.length) {
         this.subCategories.map(
           (subCat) =>
             this.seller.subCategories.includes(subCat.id) &&
@@ -751,7 +751,7 @@ export default {
     },
     searchSellers(page = 1) {
       this.page = page;
-      // this.loading = true;
+      this.loading = true;
       axios
         .post("/api/search-sellers?page=" + page, this.search)
         .then((res) => {
@@ -763,7 +763,7 @@ export default {
         });
     },
     getAllSellers(page = 1) {
-      // this.loading = true;
+      this.loading = true;
       axios
         .post(`/api/get-sellers?page=${page}`, this.search)
         .then((res) => {
@@ -864,7 +864,7 @@ export default {
       $("#userModal").modal("show");
     },
     postUser() {
-      // this.loading = true;
+      this.loading = true;
       // let seller = new FormData()
       // var file = this.new_image;
       var fd = new FormData();
@@ -937,7 +937,7 @@ export default {
       $("#userModal").modal("show");
     },
     updateUser() {
-      // this.loading = true;
+      this.loading = true;
       var fd = new FormData();
       fd.append("user_id", this.seller.user_id);
       // fd.append('email', this.seller.email)
@@ -988,8 +988,8 @@ export default {
       this.ad.sub_sub_categories = [];
     },
     filterSelectedOptions(array, items) {
-      if (array && array?.length) {
-        if (items && items?.length) {
+      if (array && array.length) {
+        if (items && items.length) {
           let selectedIds = items.map((item) => item.id);
           return array.filter((item) => !selectedIds.includes(item.id));
         }
@@ -997,9 +997,6 @@ export default {
       }
       return [];
     },
-    myLoading(item){
-      console.log("item",item)
-    }
   },
 };
 </script>
