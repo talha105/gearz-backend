@@ -120,7 +120,7 @@
               <tbody v-if="sellers.data">
                 <tr v-for="(user, index) in sellers.data" :key="index">
                   <td>{{ index + 1 }}</td>
-                  <td>{{ "user.seller.garage_name" }}</td>
+                  <td>{{ user.seller.garage_name }}</td>
                   <td>{{ user.email }}</td>
                   <td>{{ user.seller.city }}</td>
                   <td>
@@ -767,9 +767,8 @@ export default {
       axios
         .post(`/api/get-sellers?page=${page}`, this.search)
         .then((res) => {
-            console.log("data",res?.data?.sellers)
           this.loading = false;
-          this.sellers = res.data.sellers;
+          this.sellers = {...res.data.sellers,data:res.data.sellers?.data?.filter(it=>it.status=="approved")};
         })
         .catch((err) => {
           this.loading = false;
