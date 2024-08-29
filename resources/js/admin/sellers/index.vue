@@ -120,9 +120,9 @@
               <tbody v-if="sellers.data">
                 <tr v-for="(user, index) in sellers.data" :key="index">
                   <td>{{ index + 1 }}</td>
-                  <td>{{ user.seller.garage_name }}</td>
+                  <td>{{ user.seller.garage_name ?? "" }}</td>
                   <td>{{ user.email }}</td>
-                  <td>{{ user.seller.city }}</td>
+                  <td>{{ user.seller.city ?? "" }}</td>
                   <td>
                     <img
                       :src="'/storage/sellers/' + user.seller.logo"
@@ -747,7 +747,7 @@ export default {
     initiateSearching() {
       this.isSearching = true;
       this.sellers = {};
-      this.getAllSellers(2);
+      this.getAllSellers(1);
     },
     searchSellers(page = 1) {
       this.page = page;
@@ -762,7 +762,7 @@ export default {
           this.loading = false;
         });
     },
-    getAllSellers(page = 2) {
+    getAllSellers(page = 1) {
       this.loading = true;
       axios
         .post(`/api/get-sellers?page=${page}`, this.search)
