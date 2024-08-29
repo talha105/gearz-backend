@@ -751,7 +751,7 @@ export default {
     },
     searchSellers(page = 1) {
       this.page = page;
-      this.loading = true;
+      // this.loading = true;
       axios
         .post("/api/search-sellers?page=" + page, this.search)
         .then((res) => {
@@ -763,7 +763,7 @@ export default {
         });
     },
     getAllSellers(page = 1) {
-      this.loading = true;
+      // this.loading = true;
       axios
         .post(`/api/get-sellers?page=${page}`, this.search)
         .then((res) => {
@@ -864,7 +864,7 @@ export default {
       $("#userModal").modal("show");
     },
     postUser() {
-      this.loading = true;
+      // this.loading = true;
       // let seller = new FormData()
       // var file = this.new_image;
       var fd = new FormData();
@@ -937,7 +937,7 @@ export default {
       $("#userModal").modal("show");
     },
     updateUser() {
-      this.loading = true;
+      // this.loading = true;
       var fd = new FormData();
       fd.append("user_id", this.seller.user_id);
       // fd.append('email', this.seller.email)
