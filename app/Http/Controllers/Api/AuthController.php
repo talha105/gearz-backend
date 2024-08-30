@@ -232,11 +232,11 @@ class AuthController extends Controller
             
             if($type == "seller"){
                 // seller registered
-                if($request->image){
-                    $image = $request->image;
-                    $logo =  rand(99, 9999) . time() . $image->getClientOriginalName();
-                    $image->storeAs('public/sellers', $logo);
-                }
+                // if($request->image){
+                //     $image = $request->image;
+                //     $logo =  rand(99, 9999) . time() . $image->getClientOriginalName();
+                //     $image->storeAs('public/sellers', $logo);
+                // }
 
                 // if ($request->hasFile('docs')) {
                 //     $docs = $request->file('docs');
@@ -264,7 +264,7 @@ class AuthController extends Controller
                 'city' => $request->city ?? "Null",
                 'about' => $request->about ?? "Nothing",
                 // 'docs' => $documentsString ?? "Null",
-                'logo' => isset($logo) ? $logo : NULL,
+                // 'logo' => isset($logo) ? $logo : NULL,
                 ]);
             }
 
