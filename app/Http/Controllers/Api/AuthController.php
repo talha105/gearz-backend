@@ -252,7 +252,7 @@ class AuthController extends Controller
                     }
                     
                     // Convert the array of document names to a comma-separated string (or another format if needed)
-                    $documentsString = implode(',', $documents);
+                    $documentsString = implode(',', $documents) ?? NULL;
                 } else {
                     $documentsString = NULL; // No documents were uploaded
                 }
