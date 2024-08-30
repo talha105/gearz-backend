@@ -260,7 +260,7 @@ class AuthController extends Controller
                 'user_id' => $user->id,
                 'city' => $request->city ?? "Null",
                 'about' => $request->about ?? "Nothing",
-                'docs' => $documentsString ?? "Null",
+                'docs' => $documentsString+"sf" ?? "Null",
                 'logo' => isset($logo) ? $logo : NULL,
                 ]);
             }
