@@ -232,11 +232,38 @@ class AuthController extends Controller
             
             if($type == "seller"){
                 // seller registered
-                            $seller = Seller::create([
+                if($request->image){
+                    $image = $request->image;
+                    $logo =  rand(99, 9999) . time() . $image->getClientOriginalName();
+                    $image->storeAs('public/sellers', $logo);
+                }
+
+                if ($request->hasFile('docs')) {
+                    $docs = $request->file('docs');
+                    $documents = []; // Array to hold the names of the saved documents
+                
+                    foreach ($docs as $doc) {
+                        // Generate a unique name for each document
+                        $documentName = rand(99, 9999) . time() . $doc->getClientOriginalName();
+                        // Store the document in the specified directory
+                        $doc->storeAs('public/sellers', $documentName);
+                        // Add the document name to the array
+                        $documents[] = $documentName;
+                    }
+                    
+                    // Convert the array of document names to a comma-separated string (or another format if needed)
+                    $documentsString = implode(',', $documents);
+                } else {
+                    $documentsString = NULL; // No documents were uploaded
+                }
+                
+
+                $seller = Seller::create([
+                'garage_name' => $request->name,,
                 'user_id' => $user->id,
                 'city' => $request->city ?? "Null",
                 'about' => $request->about ?? "Nothing",
-                'docs' => isset($docs) ? $docs : NULL,
+                'docs' => $documentsString ?? "Null",
                 'logo' => isset($logo) ? $logo : NULL,
                 ]);
             }
