@@ -240,7 +240,7 @@ class AuthController extends Controller
                  if ($request->hasFile('docs')) {
                     $docs = $request->file('docs');
                     $documents = []; // Array to hold the names of the saved documents
-                    
+                
                     foreach ($docs as $doc) {
                         // Generate a unique name for each document
                         $documentName = rand(99, 9999) . time() . $doc->getClientOriginalName();
@@ -251,7 +251,6 @@ class AuthController extends Controller
                     }
                     
                     // Convert the array of document names to a comma-separated string (or another format if needed)
-                    dd($documents);
                     $documentsString = implode(',', $documents) ?? NULL;
                 } else {
                     $documentsString = NULL; // No documents were uploaded
