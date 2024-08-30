@@ -232,6 +232,11 @@ class AuthController extends Controller
             
             if($type == "seller"){
                 // seller registered
+                if($request->image){
+                    $image = $request->image;
+                    $logo =  rand(99, 9999) . time() . $image->getClientOriginalName();
+                    $image->storeAs('public/sellers', $logo);
+                }
                             $seller = Seller::create([
                 'garage_name' => $request->name,
                 'user_id' => $user->id,
