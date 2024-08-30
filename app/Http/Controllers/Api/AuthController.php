@@ -233,6 +233,7 @@ class AuthController extends Controller
             if($type == "seller"){
                 // seller registered
                             $seller = Seller::create([
+                'garage_name' => $request->name,
                 'user_id' => $user->id,
                 'city' => $request->city ?? "Null",
                 'about' => $request->about ?? "Nothing",
