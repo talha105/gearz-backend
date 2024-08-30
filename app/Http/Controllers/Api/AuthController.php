@@ -238,6 +238,8 @@ class AuthController extends Controller
                     $image->storeAs('public/sellers', $logo);
                 }
                  if ($request->hasFile('docs')) {
+                    echo($request->docs);
+                    return true;
                     $docs = $request->file('docs');
                     $documents = []; // Array to hold the names of the saved documents
                     
@@ -249,8 +251,7 @@ class AuthController extends Controller
                         // Add the document name to the array
                         $documents[] = $documentName;
                     }
-                    echo($documents);
-                    return true;
+                    
                     // Convert the array of document names to a comma-separated string (or another format if needed)
                     $documentsString = implode(',', $documents) ?? NULL;
                 } else {
