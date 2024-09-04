@@ -778,10 +778,17 @@ export default {
                     ...it?.seller,
                     garage_name:it?.seller?.garage_name?it?.seller?.garage_name:"",
                     city:it?.seller?.city?it?.seller?.city:"",
+                    docs:it?.seller?.docs?.split(",")
                   }
                 }
               }
-              return it
+              return {
+                ...it,
+                seller:{
+                  ...it?.seller,
+                  docs:it?.seller?.docs?.split(",")
+                }
+              }
             })
           };
         })
