@@ -180,7 +180,7 @@
                         <li>
                           <a
                             class="dropdown-item"
-                            :href="'/api/download-seller-file/' + file"
+                            :href="'/storage/sellers/' + file"
                             v-for="(file, index) in user.seller.docs"
                             :key="index"
                             >{{ file }}</a
