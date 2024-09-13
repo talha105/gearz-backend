@@ -36,6 +36,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
     Route::post('/user-register' , 'Api\AuthController@userRegister');
     Route::post('/check-current-user' , 'Api\AuthController@checkCurrentUser');
+    Route::get('/category/list' , 'Api\CategoryController@index');
+    Route::get('/category/{id}/get-sub-categories' , 'Api\CategoryController@getSubSategories');
+    Route::get('/sub-category/{id}/sub-sub-categories' , 'Api\SubSubController@index');
+    Route::get('/makes' , 'Api\MakeController@index');
 
 
 
@@ -67,13 +71,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
         // Show All categories main page
-        Route::get('/category/list' , 'Api\CategoryController@index');
-        Route::get('/category/{id}/get-sub-categories' , 'Api\CategoryController@getSubSategories');
-        Route::get('/sub-category/{id}/sub-sub-categories' , 'Api\SubSubController@index');
+        // Route::get('/category/list' , 'Api\CategoryController@index');
+        // Route::get('/category/{id}/get-sub-categories' , 'Api\CategoryController@getSubSategories');
+        // Route::get('/sub-category/{id}/sub-sub-categories' , 'Api\SubSubController@index');
 
         // Makes
         Route::get('/genres' , 'Api\GenreController@index');
-        Route::get('/makes' , 'Api\MakeController@index');
+        // Route::get('/makes' , 'Api\MakeController@index');
         Route::get('/make/{make_id}/models' , 'Api\ModelController@index');
         Route::get('/model/{model_id}/variants' , 'Api\VariantController@index');
         Route::get('/transmissions' , 'Api\TransmissionController@index');
