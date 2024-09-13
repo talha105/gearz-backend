@@ -231,7 +231,14 @@ class AuthController extends Controller
             ]);
             
             if($type == "seller"){
+                
                 // seller registered
+
+                request('makes') && $user->makes()->sync(explode(',', request('makes',[])));
+                request('categories') &&  $user->categories()->sync(explode(',', request('categories',[])));
+                request('subCategories') &&  $user->sub_categories()->sync(explode(',', request('subCategories',[])));
+                request('subSubCategories') &&  $user->sub_sub_categories()->sync(explode(',', request('subSubCategories',[])));
+
                 if($request->image){
                     $image = $request->image;
                     $logo =  rand(99, 9999) . time() . $image->getClientOriginalName();
