@@ -94,6 +94,12 @@
           </router-link>
           @endcan
 
+          @can('view transmission')
+          <router-link onclick="closeNav()"  to="/admin/subscription" class="list-group-item list-group-item-action py-2 "  aria-current="true">
+            <i class="fa-solid fa-bell"></i></i><span>Subscriptions</span>
+          </router-link>
+          @endcan
+
           @can('view sellers')
           <router-link onclick="closeNav()"  to="/admin/sellers" class="list-group-item list-group-item-action py-2 "  aria-current="true">
             <i class="fas fa-users fa-fw me-3" ></i><span>Sellers</span>
