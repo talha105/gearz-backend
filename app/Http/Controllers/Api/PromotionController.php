@@ -39,9 +39,10 @@ class PromotionController extends Controller
             'percentage' => $request->percentage,
             'description' => $request->description,
             'ar_description' => $request->ar_description ? $request->ar_description : $tr->setSource('en')->setTarget('ar')->translate($request->description),
-            'price' => $request->price,
             'duration' => $request->duration,
+            'subscription_id' => $request->subscription_id,
             'user_id' => $request->user_id,
+
 
         ]);
 
@@ -83,9 +84,9 @@ class PromotionController extends Controller
         $promotion->percentage = $request->percentage;
         $promotion->description = $request->description;
         $promotion->ar_description = $request->ar_description ? $request->ar_description : $tr->setSource('en')->setTarget('ar')->translate($request->description);
-        $promotion->price = $request->price;
         $promotion->duration = $request->duration;
         $promotion->user_id = $request->user_id;
+        $promotion->subscription_id = $request->subscription_id;
 
         $promotion->save();
 
