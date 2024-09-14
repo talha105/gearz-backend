@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                    <input type="text" id="price" placeholder="Price" class="form-control" v-model="transmission.ar_title" name="name" required>
+                    <input type="text" id="price" placeholder="Price" class="form-control" v-model="transmission.price" name="name" required>
                 </div>
             </div>
             <div class="form-group row mb-3">
@@ -212,10 +212,12 @@ export default {
             var fd = new FormData();
             fd.append('image', file)
             fd.append('title', this.transmission.title)
-            fd.append('ar_title', this.transmission.ar_title)
             fd.append('description', this.transmission.description)
+            fd.append('price', this.transmission.price)
+            fd.append('duration', this.transmission.duration)
 
-            axios.post('/api/transmission/store', fd, {
+
+            axios.post('/api/subscription/store', fd, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -247,10 +249,11 @@ export default {
             var fd = new FormData();
             fd.append('image', file)
             fd.append('title', this.transmission.title)
-            fd.append('ar_title', this.transmission.ar_title)
             fd.append('description', this.transmission.description)
+            fd.append('price', this.transmission.price)
+            fd.append('duration', this.transmission.duration)
 
-            axios.post('/api/transmission/'+ this.transmission.id +'/update', fd, {
+            axios.post('/api/subscription/'+ this.transmission.id +'/update', fd, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
