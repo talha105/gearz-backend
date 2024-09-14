@@ -304,6 +304,7 @@ class ListingController extends Controller
             'sub_sub_categories' => 'subSubCategories',
             'genres' => 'genres',
             'variants' => 'variants',
+            'transmissions'=>'transmissions'
         ];
         foreach ($relations as $key => $value) {
             if(request($value)){
