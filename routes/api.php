@@ -43,10 +43,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
     // add subscribtion
 
-    Route::post('/subscriptions/all' , 'Api\SubscribtionController@index');
-    Route::post('/subscription/store' , 'Api\SubscribtionController@store');
-    Route::post('/subscription/{id}/update' , 'Api\SubscribtionController@update');
-    Route::post('/subscription/{id}/delete' , 'Api\SubscribtionController@destroy');
+    Route::post('/subscriptions/all' , 'Api\SubscriptionController@index');
+    Route::post('/subscription/store' , 'Api\SubscriptionController@store');
+    Route::post('/subscription/{id}/update' , 'Api\SubscriptionController@update');
+    Route::post('/subscription/{id}/delete' , 'Api\SubscriptionController@destroy');
 
 
 
