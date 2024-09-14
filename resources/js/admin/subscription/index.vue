@@ -33,10 +33,10 @@
                             <tr v-for="(transmission , index) in transmissions" :key="index">
                                 <td> {{index + 1}} </td>
                                 <td> {{transmission.title}} </td>
-                                <td> {{transmission.description }} </td>
                                 <td> {{transmission.price }} </td>
                                 <td> {{transmission.duration }} </td>
                                 <td> {{ "All" }} </td>
+                                <td> {{ transmission.create_date }} </td>
                                 <td>
 
                                     <a v-permission="'edit transmission'" href="javascript:;"  @click="editTransmission(transmission)" > <i class="fas fa-edit"></i> </a>
