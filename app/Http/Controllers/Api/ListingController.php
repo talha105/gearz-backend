@@ -251,7 +251,8 @@ class ListingController extends Controller
             'ar_title' => $request->ar_title,
             'ar_title' => $request->ar_title ? $request->ar_title : $tr->setSource('en')->setTarget('ar')->translate($request->title),
             'description' => $request->description,
-            'ar_description' => $request->ar_description,
+            // 'ar_description' => $request->ar_description,
+            'ar_description' => $request->ar_description ? $request->ar_description : $tr->setSource('en')->setTarget('ar')->translate($request->ar_description),
 
             'phone' => $request->phone,
             'address' => $request->address,
@@ -292,25 +293,9 @@ class ListingController extends Controller
 
     }
 
-    // public static function attachRelationToIDsArray($listing){
+    public static function attachRelationToIDsArray($listing){
 
 
-    //     $relations = [
-    //         'models' => 'models',
-    //         'makes' => 'makes',
-    //         'categories' => 'categories',
-    //         'sub_categories' => 'subCategories',
-    //         'sub_sub_categories' => 'subSubCategories',
-    //         'genres' => 'genres',
-    //         'variants' => 'variants',
-    //     ];
-    //     foreach ($relations as $key => $value) {
-    //         if(request($value)){
-    //             $listing->$key()->sync(request($value));
-    //         }
-    //     }
-    // }
-    public static function attachRelationToIDsArray($listing) {
         $relations = [
             'models' => 'models',
             'makes' => 'makes',
@@ -320,22 +305,38 @@ class ListingController extends Controller
             'genres' => 'genres',
             'variants' => 'variants',
         ];
-        
         foreach ($relations as $key => $value) {
-            if (request($value)) {
-                $values = request($value);
-    
-                // Ensure $values is an array and take the first element
-                $singleValue = is_array($values) ? $values[0] : $values;
-    
-                if ($key === 'makes' || $key === 'models') {
-                    $singleValue = intval($singleValue); // Convert to integer
-                }
-    
-                $listing->$key()->sync($singleValue);
+            if(request($value)){
+                $listing->$key()->sync(request($value));
             }
         }
     }
+    // public static function attachRelationToIDsArray($listing) {
+    //     $relations = [
+    //         'models' => 'models',
+    //         'makes' => 'makes',
+    //         'categories' => 'categories',
+    //         'sub_categories' => 'subCategories',
+    //         'sub_sub_categories' => 'subSubCategories',
+    //         'genres' => 'genres',
+    //         'variants' => 'variants',
+    //     ];
+        
+    //     foreach ($relations as $key => $value) {
+    //         if (request($value)) {
+    //             $values = request($value);
+    
+    //             // Ensure $values is an array and take the first element
+    //             $singleValue = is_array($values) ? $values[0] : $values;
+    
+    //             if ($key === 'makes' || $key === 'models') {
+    //                 $singleValue = intval($singleValue); // Convert to integer
+    //             }
+    
+    //             $listing->$key()->sync($singleValue);
+    //         }
+    //     }
+    // }
     
     
 
@@ -390,7 +391,9 @@ class ListingController extends Controller
         $listing->description = $request->description;
 
         $listing->ar_title = $request->ar_title ? $request->ar_title : $tr->setSource('en')->setTarget('ar')->translate($request->title);
-        $listing->ar_description = $request->ar_description;
+        // $listing->ar_description = $request->ar_description;
+        $listing->ar_description = $request->ar_description ? $request->ar_description : $tr->setSource('en')->setTarget('ar')->translate($request->ar_description);
+
 
         $listing->phone = $request->phone;
         $listing->address = $request->address;
