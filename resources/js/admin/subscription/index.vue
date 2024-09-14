@@ -123,10 +123,14 @@
                 <div class="col-12 col-sm-12 col-md-2 col-lg-2">
                     <label for="title" class="row float-right col-form-label ">Users:</label>
                 </div>
-
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                    <input type="text" id="user_id" placeholder="Users" class="form-control" v-model="transmission.duration" name="user_id" required>
-                </div>
+                <v-select
+                    @input="$emit('sellerChanged', $event)"
+                    placeholder="Select Seller"
+                    :options="sellers"
+                    class="muliple-select"
+                    label="name"
+                    v-model="seller"
+                ></v-select>
             </div>
         </form>
       </div>
@@ -168,16 +172,20 @@ export default {
             new_image: '',
             deleting: '',
             transmissions: [],
+            sellers: [],
             transmission:{
                 title: "",
-                ar_title: "",
                 description: "",
                 image: "",
+                price:"",
+                duration:"",
+                user_id:"all"
             }
         }
     },
     mounted(){
         this.getAllTransmission();
+        this.getAllSellers();
     },
     methods:{
 
@@ -193,7 +201,16 @@ export default {
                 console.log(err)
             })
         },
-
+        getAllSellers() {
+            axios
+            .get("/api/get-sellers-list")
+            .then(res => {
+                this.sellers = res.data.sellers;
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        },
         showTransmissionModal(){
             this.resetForm();
             this.editMode=  false;
@@ -224,6 +241,7 @@ export default {
             fd.append('description', this.transmission.description)
             fd.append('price', this.transmission.price)
             fd.append('duration', this.transmission.duration)
+            fd.append('user_id', this.transmission.user_id)
 
 
             axios.post('/api/subscription/store', fd, {
@@ -261,6 +279,7 @@ export default {
             fd.append('description', this.transmission.description)
             fd.append('price', this.transmission.price)
             fd.append('duration', this.transmission.duration)
+            fd.append('user_id', this.transmission.user_id)
 
             axios.post('/api/subscription/'+ this.transmission.id +'/update', fd, {
                 headers: {
@@ -324,10 +343,16 @@ export default {
 
         resetForm(){
             this.transmission.title = ''
-            this.transmission.ar_title = ''
             this.transmission.description = ''
             this.transmission.image = ''
             this.newImageSrc = ''
+            this.transmission.price = ''
+            this.transmission.duration = ''
+            this.transmission.user_id = 'all'
+
+        },
+        sellerChanged(seller) {
+            this.transmission.user_id = seller.id;
         }
 
 
