@@ -23,7 +23,7 @@
                                 <th>Title</th>
                                 <th>price</th>
                                 <th>duration</th>
-                                <th>user</th>
+                                <!-- <th>user</th> -->
                                 <th>Create Date</th>
                                 <th>Actions</th>
                             </tr>
@@ -35,7 +35,7 @@
                                 <td> {{transmission.title}} </td>
                                 <td> {{transmission.price }} </td>
                                 <td> {{transmission.duration }} </td>
-                                <td> {{ "All" }} </td>
+                                <!-- <td> {{ "All" }} </td> -->
                                 <td> {{ transmission.create_date }} </td>
                                 <td>
 
