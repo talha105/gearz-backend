@@ -83,54 +83,58 @@
         <form @submit.prevent="postTransmission" >
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-7 col-lg-7">
-                    <div class="form-group row mb-3">
-                        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                            <label for="title" class="row float-right col-form-label ">Title:</label>
-                        </div>
-
-                        <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                            <input type="text" id="title" placeholder="Title" class="form-control" v-model="transmission.title" name="name" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="name" class="col-form-label"
+                            >Title:</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            placeholder="Title"
+                            v-model="transmission.title"
+                            required
+                        />
                     </div>
-                    <div class="form-group row mb-3">
-                        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                            <quill-editor
-                                            class="w-100"
-                                            ref="myQuillEditor"
-                                            required
-                                            v-model="transmission.description"
-                                        />
-                        </div>
-
-                        <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                            <input type="text" id="description" placeholder="Description" class="form-control" v-model="transmission.description" name="description" required>
-                        </div>
+                    <div class="form-group">
+                        <label
+                            for="description"
+                            class="col-form-label"
+                            >Description:</label
+                        >
+                        <quill-editor
+                            class="w-100"
+                            ref="myQuillEditor"
+                            required
+                            v-model="transmission.description"
+                        />
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-5 col-lg-5">
-                <div class="form-group row mb-3">
-                        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                            <label for="title" class="row float-right col-form-label ">Price:</label>
-                        </div>
-
-                        <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                            <input type="text" id="price" placeholder="Price" class="form-control" v-model="transmission.price" name="price" required>
-                        </div>
-                    </div>
-            <div class="form-group row mb-3">
-                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                    <label for="title" class="row float-right col-form-label ">Duration:</label>
+                <div class="">
+                    <label class="col-form-label">Price:</label>
+                    <input
+                        type="text"
+                        id="price"
+                        class="form-control"
+                        v-model="transmission.price"
+                        placeholder="Price"
+                        required
+                    />
                 </div>
-
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                    <input type="text" id="duration" placeholder="Duration" class="form-control" v-model="transmission.duration" name="duration" required>
-                </div>
+            <div class="">
+                <label class="col-form-label">Duration:</label>
+                <input
+                        type="text"
+                        id="duration"
+                        class="form-control"
+                        v-model="transmission.duration"
+                        placeholder="Duration"
+                        required
+                    />
             </div>
-            <div class="form-group row mb-3">
-                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+            <div class="">
                     <label for="title" class="row float-right col-form-label ">Users:</label>
-                </div>
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
                     <v-select
                     @input="sellerChanged"
                     placeholder="Select Seller"
@@ -139,7 +143,6 @@
                     label="name"
                     v-model="transmission.user_id"
                 ></v-select>
-                </div>
             </div>
             </div>
             </div>
