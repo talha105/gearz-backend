@@ -129,7 +129,7 @@
                     :options="sellers"
                     class="muliple-select"
                     label="name"
-                    v-model="seller"
+                    v-model="transmission.user_id"
                 ></v-select>
             </div>
         </form>
@@ -312,7 +312,7 @@ export default {
             this.transmission.description = transmission.description && transmission.description != 'null' ? transmission.description : '';
             this.transmission.price = transmission.price;
             this.transmission.duration = transmission.duration;
-            this.transmission.user_id = transmission.user_id;
+            this.transmission.user_id = transmission.user_id?transmission.user_id:'all';
 
             if(transmission.image){
                 this.newImageSrc = '/storage/transmissions/' + transmission.image
@@ -356,7 +356,6 @@ export default {
 
         },
         sellerChanged(seller) {
-            console.log("ss",seller)
             this.transmission.user_id = seller.id;
         }
 
