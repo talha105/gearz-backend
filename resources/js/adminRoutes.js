@@ -161,7 +161,7 @@ const routes = [{
     {
         path: '/admin/subscription',
         name: 'Subscriptions',
-        component: require('./admin/transmission/index.vue').default,
+        component: require('./admin/subscription/index.vue').default,
         meta: {
             permission: 'view transmission'
         }
