@@ -21,7 +21,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Title</th>
-                                <th>Arabic Title</th>
+                                <th>price</th>
+                                <th>duration</th>
+                                <th>user</th>
                                 <th>Create Date</th>
                                 <th>Actions</th>
                             </tr>
@@ -31,8 +33,10 @@
                             <tr v-for="(transmission , index) in transmissions" :key="index">
                                 <td> {{index + 1}} </td>
                                 <td> {{transmission.title}} </td>
-                                <td> {{transmission.ar_title }} </td>
-                                <td> {{ transmission.create_date }} </td>
+                                <td> {{transmission.description }} </td>
+                                <td> {{transmission.price }} </td>
+                                <td> {{transmission.duration }} </td>
+                                <td> {{ "All" }} </td>
                                 <td>
 
                                     <a v-permission="'edit transmission'" href="javascript:;"  @click="editTransmission(transmission)" > <i class="fas fa-edit"></i> </a>
@@ -152,11 +156,11 @@ export default {
 
         getAllTransmission(){
             this.loading_data = true
-            axios.post('/api/transmissions/all')
+            axios.post('/api/subscriptions/all')
             .then( res => {
                 console.log(res)
                 this.loading_data = false
-                this.transmissions = res.data.transmissions;
+                this.transmissions = res.data.subscriptions;
             }).catch( err => {
                 this.loading_data = false
                 console.log(err)
