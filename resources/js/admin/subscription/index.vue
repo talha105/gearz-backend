@@ -119,6 +119,15 @@
                     <input type="text" id="duration" placeholder="Duration" class="form-control" v-model="transmission.duration" name="duration" required>
                 </div>
             </div>
+            <div class="form-group row mb-3">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <label for="title" class="row float-right col-form-label ">Users:</label>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                    <input type="text" id="user_id" placeholder="Users" class="form-control" v-model="transmission.duration" name="user_id" required>
+                </div>
+            </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -277,8 +286,11 @@ export default {
             this.editMode=  true;
             this.transmission.id = transmission.id;
             this.transmission.title = transmission.title;
-            this.transmission.ar_title = transmission.ar_title;
             this.transmission.description = transmission.description && transmission.description != 'null' ? transmission.description : '';
+            this.transmission.price = transmission.price;
+            this.transmission.duration = transmission.duration;
+            this.transmission.user_id = transmission.user_id=="all"?undefined:transmission.user_id;
+
             if(transmission.image){
                 this.newImageSrc = '/storage/transmissions/' + transmission.image
             }
