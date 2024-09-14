@@ -153,12 +153,12 @@
 
         <button type="button" class="btn btn-dark" data-mdb-dismiss="modal">Close</button>
 
-        <button v-if="!editMode" @click="postTransmission" :disabled="loading || !transmission.title" type="button" class="btn btn-success">
+        <button v-if="!editMode" @click="postTransmission" :disabled="loading || !transmission.title || !transmission.description || !transmission.price || !transmission.duration" type="button" class="btn btn-success">
             <b-spinner v-if="loading" small ></b-spinner>
             <i v-else class="fas fa-plus"></i>
         Create </button>
 
-        <button v-if="editMode" @click="updateTransmission" :disabled="loading || !transmission.title" type="button" class="btn btn-primary">
+        <button v-if="editMode" @click="updateTransmission" :disabled="loading || !transmission.title || !transmission.description || !transmission.price || !transmission.duration" type="button" class="btn btn-primary">
             <b-spinner v-if="loading" small ></b-spinner>
             <i v-else class="fas fa-edit"></i>
         Update </button>
