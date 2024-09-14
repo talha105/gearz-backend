@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                    <input type="text" id="price" placeholder="Price" class="form-control" v-model="transmission.price" name="name" required>
+                    <input type="text" id="price" placeholder="Price" class="form-control" v-model="transmission.price" name="price" required>
                 </div>
             </div>
             <div class="form-group row mb-3">
@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                    <input type="text" id="description" placeholder="Description" class="form-control" v-model="transmission.description" name="name" required>
+                    <input type="text" id="description" placeholder="Description" class="form-control" v-model="transmission.description" name="description" required>
                 </div>
             </div>
             <div class="form-group row mb-3">
@@ -116,7 +116,7 @@
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                    <input type="text" id="duration" placeholder="Duration" class="form-control" v-model="transmission.duration" name="name" required>
+                    <input type="text" id="duration" placeholder="Duration" class="form-control" v-model="transmission.duration" name="duration" required>
                 </div>
             </div>
         </form>

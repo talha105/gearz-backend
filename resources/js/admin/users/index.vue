@@ -10,7 +10,7 @@
                     <a class="btn btn-outline-primary ms-2  btn-sm float-end"   data-mdb-toggle="collapse" href="#filtersCollapse" role="button" aria-expanded="false" aria-controls="filtersCollapse" > <i class="fas fa-sort-shapes-down-alt"></i> Filter</a>
 
 
-                    <h5 class="card-title">Manage Sellers</h5>
+                    <h5 class="card-title">Manage Users</h5>
 
 
                 </div>
