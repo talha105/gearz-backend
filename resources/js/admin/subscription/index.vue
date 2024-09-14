@@ -81,35 +81,42 @@
       </div>
       <div class="modal-body px-5">
         <form @submit.prevent="postTransmission" >
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-7 col-lg-7">
+                    <div class="form-group row mb-3">
+                        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                            <label for="title" class="row float-right col-form-label ">Title:</label>
+                        </div>
 
-            <div class="form-group row mb-3">
-                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                    <label for="title" class="row float-right col-form-label ">Title:</label>
-                </div>
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                            <input type="text" id="title" placeholder="Title" class="form-control" v-model="transmission.title" name="name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                            <quill-editor
+                                            class="w-100"
+                                            ref="myQuillEditor"
+                                            required
+                                            v-model="transmission.description"
+                                        />
+                        </div>
 
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                    <input type="text" id="title" placeholder="Title" class="form-control" v-model="transmission.title" name="name" required>
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                            <input type="text" id="description" placeholder="Description" class="form-control" v-model="transmission.description" name="description" required>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="form-group row mb-3">
+                        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                            <label for="title" class="row float-right col-form-label ">Price:</label>
+                        </div>
 
-            <div class="form-group row mb-3">
-                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                    <label for="title" class="row float-right col-form-label ">Price:</label>
-                </div>
-
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                    <input type="text" id="price" placeholder="Price" class="form-control" v-model="transmission.price" name="price" required>
-                </div>
-            </div>
-            <div class="form-group row mb-3">
-                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                    <label for="title" class="row float-right col-form-label ">Description:</label>
-                </div>
-
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                    <input type="text" id="description" placeholder="Description" class="form-control" v-model="transmission.description" name="description" required>
-                </div>
-            </div>
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                            <input type="text" id="price" placeholder="Price" class="form-control" v-model="transmission.price" name="price" required>
+                        </div>
+                    </div>
             <div class="form-group row mb-3">
                 <div class="col-12 col-sm-12 col-md-2 col-lg-2">
                     <label for="title" class="row float-right col-form-label ">Duration:</label>
@@ -123,7 +130,8 @@
                 <div class="col-12 col-sm-12 col-md-2 col-lg-2">
                     <label for="title" class="row float-right col-form-label ">Users:</label>
                 </div>
-                <v-select
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                    <v-select
                     @input="sellerChanged"
                     placeholder="Select Seller"
                     :options="sellers"
@@ -131,6 +139,9 @@
                     label="name"
                     v-model="transmission.user_id"
                 ></v-select>
+                </div>
+            </div>
+            </div>
             </div>
         </form>
       </div>
