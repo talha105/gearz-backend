@@ -142,6 +142,7 @@
                     class="muliple-select"
                     label="name"
                     v-model="transmission.user_id"
+                    :reduce="seller => seller.id"
                 ></v-select>
             </div>
             </div>
@@ -370,7 +371,7 @@ export default {
 
         },
         sellerChanged(seller) {
-            this.transmission.user_id = seller.id;
+            this.transmission.user_id = seller;
         }
 
 
