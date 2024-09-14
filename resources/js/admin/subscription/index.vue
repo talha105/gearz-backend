@@ -70,8 +70,8 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" v-if="!editMode" id="transmissionModal">Add Transmission</h5>
-        <h5 class="modal-title" v-if="editMode" id="transmissionModal">Edit Transmission</h5>
+        <h5 class="modal-title" v-if="!editMode" id="transmissionModal">Add Subscription</h5>
+        <h5 class="modal-title" v-if="editMode" id="transmissionModal">Edit Subscription</h5>
         <button
           type="button"
           class="btn-close"
@@ -94,11 +94,29 @@
 
             <div class="form-group row mb-3">
                 <div class="col-12 col-sm-12 col-md-2 col-lg-2">
-                    <label for="title" class="row float-right col-form-label ">Arabic Title:</label>
+                    <label for="title" class="row float-right col-form-label ">Price:</label>
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                    <input type="text" id="ar_title" placeholder="Aracic Title" class="form-control" v-model="transmission.ar_title" name="name" required>
+                    <input type="text" id="price" placeholder="Price" class="form-control" v-model="transmission.ar_title" name="name" required>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <label for="title" class="row float-right col-form-label ">Description:</label>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                    <input type="text" id="description" placeholder="Description" class="form-control" v-model="transmission.description" name="name" required>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <label for="title" class="row float-right col-form-label ">Duration:</label>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                    <input type="text" id="duration" placeholder="Duration" class="form-control" v-model="transmission.duration" name="name" required>
                 </div>
             </div>
         </form>
@@ -278,7 +296,7 @@ export default {
                 if (result.isConfirmed) {
 
                     this.deleting = transmission;
-                    axios.post('/api/transmission/ ' + transmission.id + ' /delete')
+                    axios.post('/api/subscription/ ' + transmission.id + ' /delete')
                     .then( res => {
                         // console.log(res)
                         this.getAllTransmission();
