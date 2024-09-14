@@ -159,6 +159,14 @@ const routes = [{
         }
     },
     {
+        path: '/admin/subscription',
+        name: 'Subscriptions',
+        component: require('./admin/transmission/index.vue').default,
+        meta: {
+            permission: 'view transmission'
+        }
+    },
+    {
         path: '/admin/categories',
         name: 'category',
         component: require('./admin/categories/index.vue').default,
