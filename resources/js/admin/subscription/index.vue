@@ -245,7 +245,7 @@ export default {
         },
         postTransmission()
         {
-            if(this.transmission.title){
+            if(this.transmission.title && this.transmission.description && this.transmission.price && this.transmission.duration){
 
 
             let file = this.new_image;
@@ -285,7 +285,7 @@ export default {
 
         updateTransmission()
         {
-            if(this.transmission.title){
+            if(this.transmission.title && this.transmission.description && this.transmission.price && this.transmission.duration){
 
 
             let file = this.new_image;
