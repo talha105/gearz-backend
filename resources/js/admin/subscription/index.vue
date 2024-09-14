@@ -124,7 +124,7 @@
                     <label for="title" class="row float-right col-form-label ">Users:</label>
                 </div>
                 <v-select
-                    @input="$emit('sellerChanged', $event)"
+                    @input="sellerChanged"
                     placeholder="Select Seller"
                     :options="sellers"
                     class="muliple-select"
@@ -356,6 +356,7 @@ export default {
 
         },
         sellerChanged(seller) {
+            console.log("ss",seller)
             this.transmission.user_id = seller.id;
         }
 
