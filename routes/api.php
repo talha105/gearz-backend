@@ -202,6 +202,13 @@ Route::post('/transmission/store' , 'Api\TransmissionController@store');
 Route::post('/transmission/{id}/update' , 'Api\TransmissionController@update');
 Route::post('/transmission/{id}/delete' , 'Api\TransmissionController@destroy');
 
+// add subscribtion
+
+Route::post('/subscriptions/all' , 'Api\SubscribtionController@index');
+Route::post('/subscription/store' , 'Api\SubscribtionController@store');
+Route::post('/subscription/{id}/update' , 'Api\SubscribtionController@update');
+Route::post('/subscription/{id}/delete' , 'Api\SubscribtionController@destroy');
+
 
 
 Route::post('/category/all' , 'Api\CategoryController@index');
