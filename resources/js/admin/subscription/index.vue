@@ -134,7 +134,7 @@
                     />
             </div>
             <div class="">
-                    <label for="title" class="row float-right col-form-label ">Users:</label>
+                    <label for="title" class="col-form-label ">Users:</label>
                     <v-select
                     @input="sellerChanged"
                     placeholder="Select Seller"
