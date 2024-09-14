@@ -239,7 +239,7 @@ class ListingController extends Controller
     public function store(Request $request)
     {
 
-        // $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
+        $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
 
 
         $listing = Listing::create([
@@ -249,7 +249,7 @@ class ListingController extends Controller
 
             'title' => $request->title,
             'ar_title' => $request->ar_title,
-            // 'ar_title' => $request->ar_title ? $request->ar_title : $tr->setSource('en')->setTarget('ar')->translate($request->title),
+            'ar_title' => $request->ar_title ? $request->ar_title : $tr->setSource('en')->setTarget('ar')->translate($request->title),
             'description' => $request->description,
             'ar_description' => $request->ar_description,
 
