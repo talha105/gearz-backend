@@ -48,6 +48,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     Route::post('/subscription/{id}/update' , 'Api\SubscriptionController@update');
     Route::post('/subscription/{id}/delete' , 'Api\SubscriptionController@destroy');
 
+        // add promotion
+
+    Route::post('/promotions/all' , 'Api\PromotionController@index');
+    Route::post('/promotion/store' , 'Api\PromotionController@store');
+    Route::post('/promotion/{id}/update' , 'Api\PromotionController@update');
+    Route::post('/promotion/{id}/delete' , 'Api\PromotionController@destroy');
+
 
 
 
