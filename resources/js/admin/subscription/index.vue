@@ -279,7 +279,7 @@ export default {
             fd.append('description', this.transmission.description)
             fd.append('price', this.transmission.price)
             fd.append('duration', this.transmission.duration)
-            fd.append('user_id', this.transmission.user_id)
+            this.transmission.user_id = transmission.user_id=="all"?undefined:transmission.user_id;
 
             axios.post('/api/subscription/'+ this.transmission.id +'/update', fd, {
                 headers: {
