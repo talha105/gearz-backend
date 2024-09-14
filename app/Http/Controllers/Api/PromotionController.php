@@ -35,7 +35,7 @@ class PromotionController extends Controller
         $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
 
         $promotions = Promotion::create([
-            'code' => $request->title,
+            'code' => $request->code,
             'percentage' => $request->percentage,
             'description' => $request->description,
             'ar_description' => $request->ar_description ? $request->ar_description : $tr->setSource('en')->setTarget('ar')->translate($request->description),
