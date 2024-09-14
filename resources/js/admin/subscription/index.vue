@@ -241,7 +241,9 @@ export default {
             fd.append('description', this.transmission.description)
             fd.append('price', this.transmission.price)
             fd.append('duration', this.transmission.duration)
-            fd.append('user_id', this.transmission.user_id)
+            if(this.transmission.user_id!="all"){
+                fd.append('user_id', this.transmission.user_id)
+            }
 
 
             axios.post('/api/subscription/store', fd, {
@@ -279,7 +281,9 @@ export default {
             fd.append('description', this.transmission.description)
             fd.append('price', this.transmission.price)
             fd.append('duration', this.transmission.duration)
-            this.transmission.user_id = transmission.user_id=="all"?undefined:transmission.user_id;
+            if(this.transmission.user_id!="all"){
+                fd.append('user_id', this.transmission.user_id)
+            }
 
             axios.post('/api/subscription/'+ this.transmission.id +'/update', fd, {
                 headers: {
@@ -308,7 +312,7 @@ export default {
             this.transmission.description = transmission.description && transmission.description != 'null' ? transmission.description : '';
             this.transmission.price = transmission.price;
             this.transmission.duration = transmission.duration;
-            this.transmission.user_id = transmission.user_id=="all"?undefined:transmission.user_id;
+            this.transmission.user_id = transmission.user_id;
 
             if(transmission.image){
                 this.newImageSrc = '/storage/transmissions/' + transmission.image
