@@ -142,7 +142,7 @@
                     class="muliple-select"
                     label="name"
                     v-model="transmission.user_id"
-                    :value="option => option.id"
+                    :reduce="seller => seller.id"
                 ></v-select>
             </div>
             </div>
