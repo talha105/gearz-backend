@@ -252,7 +252,7 @@ class ListingController extends Controller
             'ar_title' => $request->ar_title ? $request->ar_title : $tr->setSource('en')->setTarget('ar')->translate($request->title),
             'description' => $request->description,
             // 'ar_description' => $request->ar_description,
-            'ar_description' => $request->ar_description ? $request->ar_description : $tr->setSource('en')->setTarget('ar')->translate($request->ar_description),
+            'ar_description' => $request->ar_description ? $request->ar_description : $tr->setSource('en')->setTarget('ar')->translate($request->description),
 
             'phone' => $request->phone,
             'address' => $request->address,
@@ -392,7 +392,7 @@ class ListingController extends Controller
 
         $listing->ar_title = $request->ar_title ? $request->ar_title : $tr->setSource('en')->setTarget('ar')->translate($request->title);
         // $listing->ar_description = $request->ar_description;
-        $listing->ar_description = $request->ar_description ? $request->ar_description : $tr->setSource('en')->setTarget('ar')->translate($request->ar_description);
+        $listing->ar_description = $request->ar_description ? $request->ar_description : $tr->setSource('en')->setTarget('ar')->translate($request->description);
 
 
         $listing->phone = $request->phone;
